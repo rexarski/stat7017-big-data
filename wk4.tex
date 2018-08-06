@@ -434,7 +434,54 @@ Further, we can also say something about all the derivatives of $f$.\\
 	
 	$$f^{(k)}(z)=\frac{k!}{2\pi i}\oint_C\frac{f(\xi)}{(\xi-z)^{k+1}}d\xi.$$
 	
+\end{theorem}
+
+If $f(z)$ is an analytic function, we can establish its \underline{Taylor series} on its domain $\mathcal{D}=\{z:\lvert z\rvert\leq R\}$:
+
+$$f(z)=\sum^\infty_{j=0}b_jz^j,\ b_j=\frac{f^{(j)}(0)}{j!}.$$
+
+\underline{Example:} $e^z=\sum^\infty_{j=0}\frac{z^j}{j!},\ \lvert z\rvert < \infty$\\
+
+In many situations we encounter functions that are not analytic everywhere in $\mathbb{C}$. Typically, they are not analytic at a point, or in some region.
+
+This means that Taylor series \underline{cannot} be applied.
+
+Luckily, another series representation can sometimes be found in terms of positive and negative powers of $(z-z_0)$.
+
+\begin{theorem}
+	(Laurent Series) A function $f(z)$ analytic in an annulus $R_1\leq \lvert z-z_0\rvert \leq R_2$ may be represented by the expansion
 	
+	$$f(z)=\sum^\infty_{n=-\infty}c_n(z-z_0)^n$$
+	
+	in the region $R_1<R_a\leq \lvert z- z_0\rvert \leq R_b < R_2$ where 
+	
+	$$c_n:=\frac{1}{2\pi i}\oint_C\frac{f(z)}{(z-z_0)^{n+1}}dz$$
+	
+	and $C$ is any simple closed contour in region of analyticity enclosing $\lvert z-z_0\rvert < R_1$.
+	
+	So $f(z)=\sum^\infty_{n=-\infty}c_n(z-z_0)^n$ and $c_{-1}$ is called the \underline{residue} of $f$. The negative powers are called the \underline{principal part} of $f$.
+	
+	$$c_{-1}:=\frac{1}{2\pi i}\oint_C f(z)dz$$
+\end{theorem}
+
+We call a point $z_0$ an \underline{isolated singularity} of a function $f$ if the function is analytic in the punctured disk
+
+$$D=\{z:0<\lvert z-z_0\rvert\leq R.\}$$
+
+Three types of singular points exist:
+
+\begin{itemize}
+	\item A \underline{removable singularity point} is when the Laurent series at the point has no terms with negative power $n<0$.
+	\item A \underline{pole of order $m$} is an isolated singularity point such that$$f(z)=\sum^\infty_{n=-m}a_n(z-z_0)^n,\ a_{-m}\not=0.$$
+	\item An \underline{essential singularity point} is an isolated singularity point where the Laurent series has infinitely many terms with negative power $n<0$.
+\end{itemize}
+
+\begin{theorem}
+	Let $f(z)$ be analytic inside and on a simple closed contour $C$, except for a finite number of isolated singular points $z_1,z_2,\dots, z_N$ located inside $C$. Then
+	
+	$$\oint f(z)dz=2\pi i\sum^N_{j=1}a_j$$
+	
+	where $a_j$ is the \underline{residue} of $f(z)$ at $z=z_j$, denoted by $a_j:=Res(f(z), z_j).$
 \end{theorem}
 
 % **** THIS ENDS THE EXAMPLES. DON'T DELETE THE FOLLOWING LINE:
